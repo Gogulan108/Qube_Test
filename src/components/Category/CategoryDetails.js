@@ -44,7 +44,7 @@ const CategoryDetails = () => {
     const pro = JSON.parse(localStorage.getItem("data"));
     pro.push(updatedata);
     localStorage.setItem("data", JSON.stringify(pro));
-    alert("Item added in Favourites, please check favourites");
+    alert(fname+" added in Favourites, please check favourites");
   };
 
   return (

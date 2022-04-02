@@ -31,7 +31,8 @@ const Favourites = () => {
     setMeasure(list.slice(29, 49));
     setShow(true);
   };
-  const handleRemove = (idMeal) => {
+  const handleRemove = (idMeal, fname) => {
+    alert(fname+" Removed in Favourites");
     let temp = data.filter((d) => {
       return d.id !== idMeal;
     });
@@ -64,7 +65,7 @@ const Favourites = () => {
                       <Button
                         style={{ marginLeft: "30px" }}
                         variant="primary"
-                        onClick={() => handleRemove(category.id)}
+                        onClick={() => handleRemove(category.id,category.name)}
                       >
                         Remove
                       </Button>
