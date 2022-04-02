@@ -51,7 +51,7 @@ const CategoryDetails = () => {
     <>
       <Container className="container">
         <h1 style={{ textAlign: "center", color: "#b92b27" }}>
-          {location.state.categoryName} Based Dishes
+          {location.state.categoryName} Dishes
         </h1>
         <Row style={{ marginTop: "20px" }}>
           {categories.map((category, k) => (
