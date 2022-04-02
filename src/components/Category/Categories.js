@@ -18,7 +18,7 @@ const Categories = () => {
   }, []);
   return (
     <Container className="container">
-      <h1 style={{textAlign:"center"}}>Our Menus</h1>
+      <h1 style={{textAlign:"center"}}>Our <b style={{ color: "red" }}>Menus</b></h1>
       <Row style={{ marginTop: "20px" }}>
         {categories.map((categories, k) => (
           <Col key={k} xs={12} md={4} lg={3} style={{ marginTop: "20px" }}>

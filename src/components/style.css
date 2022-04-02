@@ -1,7 +1,7 @@
 .carousel-control-next-icon,
 .carousel-control-prev-icon
 {
-     visibility:hidden;
+     border-color: red;
 }
 .carousel-indicators{
     display: none;

@@ -20,10 +20,7 @@ const Favourites = () => {
     console.log(localStorage.getItem("data"));
     const result = JSON.parse(localStorage.getItem("data"));
     setData(result);
-    return () => {
-      localStorage.clear();
-    };
-  }, []); 
+  }, []);
   const handleButton = async (idMeal) => {
     const result = await axios(
       "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + idMeal
@@ -34,7 +31,14 @@ const Favourites = () => {
     setMeasure(list.slice(29, 49));
     setShow(true);
   };
-  if (data) {
+  const handleRemove = (idMeal) => {
+    let temp = data.filter((d) => {
+      return d.id !== idMeal;
+    });
+    localStorage.setItem("data", JSON.stringify(temp));
+    setData(temp);
+  };
+  if (data.length > 0) {
     return (
       <>
         <Container className="container">
@@ -56,6 +60,13 @@ const Favourites = () => {
                         onClick={() => handleButton(category.id)}
                       >
                         Details
+                      </Button>
+                      <Button
+                        style={{ marginLeft: "30px" }}
+                        variant="primary"
+                        onClick={() => handleRemove(category.id)}
+                      >
+                        Remove
                       </Button>
                     </div>
                   </Card.Body>
@@ -143,7 +154,9 @@ const Favourites = () => {
         <h1>
           Add your <b style={{ color: "red" }}>Favourite Dishes</b>
         </h1>
-        <Button variant="secondary" onClick={(e) => navigate("/categories")}>click here!!!</Button>
+        <Button variant="secondary" onClick={(e) => navigate("/categories")}>
+          click here!!!
+        </Button>
       </div>
     </>
   );

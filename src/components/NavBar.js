@@ -8,7 +8,7 @@ function NavBar() {
   return (
     <Navbar expand="lg">
       <Container>
-        <Navbar.Brand style={{marginRight:"350px"}} as={Link} to="/">
+        <Navbar.Brand style={{marginRight:"440px"}} as={Link} to="/">
           <b>Cookery</b>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />

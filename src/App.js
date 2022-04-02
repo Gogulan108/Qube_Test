@@ -1,6 +1,7 @@
 import NavBar from "./components/NavBar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
+import React, { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // import Home component
@@ -9,6 +10,11 @@ import Categories from "./components/Category/Categories";
 import CategoryDetails from "./components/Category/CategoryDetails";
 import Favourites from "./components/Favourites";
 function App() {
+  useEffect(() =>{
+    return () => {
+      localStorage.clear();
+    };
+  },[])
   return (
     <Router>
       <div className="App">
