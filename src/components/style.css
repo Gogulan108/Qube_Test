@@ -1,0 +1,15 @@
+.carousel-control-next-icon,
+.carousel-control-prev-icon
+{
+     visibility:hidden;
+}
+.carousel-indicators{
+    display: none;
+}
+
+.carousel-slide{
+    height: 20%;
+}
+.image-bordering{
+    border-radius: 8%;
+}
